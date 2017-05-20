@@ -7,23 +7,23 @@ const EventBillingInfo = require('../app/shared/models/eventBillingInfo');
 const EventService = require('../app/components/eventService');
 
 describe('EventService', ()=>{
-  const eventPersistance = {
+  const eventPersistence = {
     saveEvent: (event) => {}
   }
   const eventBillingService = {
     processEvent: (eventBillingInfo) => {}
   }
-  const saveEventSpy = sinon.spy(eventPersistance, 'saveEvent');
+  const saveEventSpy = sinon.spy(eventPersistence, 'saveEvent');
   const billingProcessEventSpy = sinon.spy(eventBillingService, 'processEvent');
 
-  const eventService = new EventService(eventPersistance, eventBillingService);
+  const eventService = new EventService(eventPersistence, eventBillingService);
   const dummyEvent = new Event({});
 
   it('should provide "processEvent" method', ()=>{
     assert.isFunction(eventService.processEvent, '"processEvent" method is not provided');
   });
 
-  it('should call "saveEvent" of the EventPersistance', ()=>{
+  it('should call "saveEvent" of the EventPersistence', ()=>{
     eventService.processEvent(dummyEvent);
 
     assert(saveEventSpy.calledOnce, '"saveEvent" was not called');

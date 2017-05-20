@@ -1,11 +1,11 @@
 class EventService{
-  constructor(eventPersistance, eventBillingService){
-    this._eventPersistance = eventPersistance;
+  constructor(eventPersistence, eventBillingService){
+    this._eventPersistence = eventPersistence;
     this._eventBillingService = eventBillingService;
   }
 
   processEvent(event){
-    this._eventPersistance.saveEvent(event);
+    this._eventPersistence.saveEvent(event);
     this._eventBillingService.processEvent(event.getBillingInfo());
   }
 }
