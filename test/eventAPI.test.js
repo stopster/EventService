@@ -2,9 +2,8 @@ const chai = require('chai');
 const sinon = require('sinon');
 const express = require('express');
 const assert = chai.assert;
-const expect = chai.expect;
 
-const Event = require('../app/shared/event');
+const Event = require('../app/shared/models/event');
 const EventAPI = require('../app/components/eventAPI');
 
 describe('EventAPI', ()=>{

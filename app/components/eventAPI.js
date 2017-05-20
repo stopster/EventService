@@ -1,4 +1,4 @@
-const Event = require('../shared/event');
+const Event = require('../shared/models/event');
 
 class EventAPI{
   constructor (httpProvider, eventService) {
@@ -10,7 +10,6 @@ class EventAPI{
 
   exposeAPI(){
     this._httpProvider.post('/event', (req, res)=>{
-      // TODO implement save event request;
       let event = new Event(req.body);
       this._eventService.processEvent(event);
     });
