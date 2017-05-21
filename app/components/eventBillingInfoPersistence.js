@@ -5,7 +5,6 @@ class EventBillingInfoPersistence {
 
   saveEventBillingInfo(eventBillingInfo){
     // TODO save to actual DB
-    console.log('Save event billing info');
   }
 }
 
