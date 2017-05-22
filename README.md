@@ -1,7 +1,7 @@
 Event service
 0. Install all dependencies
 ```
-npm install
+  npm install
 ```
 
 1. Running tests
