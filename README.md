@@ -1,10 +1,14 @@
 Event service
 1. Running tests
-```     npm test
+```
+npm test
+
 ```
 
 2. Run app on localhost:8080
-```     node app
+```
+node app
+
 ```
 
 Here are prepared requests for Postman
