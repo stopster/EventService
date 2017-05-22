@@ -6,12 +6,12 @@ try{
   crypto = require('../shared/utils/dummyCrypto');
 }
 
-class EventUID {
+class EventID {
   constructor(event){
-    this._UID = this.generateNewUID(event.timestamp, event.pageId, event.clientId);
+    this._ID = this.generateNewID(event.timestamp, event.pageID, event.clientID);
   }
 
-  generateNewUID(timestamp, pageId, clientId){
+  generateNewID(timestamp, pageId, clientId){
     let hash = crypto.createHash('sha256');
     hash.update('' + timestamp)
         .update('' + pageId)
@@ -21,8 +21,8 @@ class EventUID {
   }
 
   toString (){
-    return this._UID;
+    return this._ID;
   }
 }
 
-module.exports = EventUID;
+module.exports = EventID;

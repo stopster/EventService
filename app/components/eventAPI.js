@@ -11,7 +11,11 @@ class EventAPI{
   exposeAPI(){
     this._httpProvider.post('/event', (req, res)=>{
       let event = new Event(req.body);
-      this._eventService.processEvent(event);
+      this._eventService.processEvent(event).then((result) => {
+        res.send('OK');
+      }, (error) => {
+        res.status (500).send('NOT OK');
+      });
     });
   }
 }

@@ -5,12 +5,19 @@ class EventService{
   }
 
   processEvent(event){
-    this._eventPersistence.saveEvent(event);
-    this._eventBillingService.processEvent(event.getBillingInfo());
+    return new Promise((resolve, reject) => {
+      this._eventPersistence.persist(event).then((result)=>{
+        resolve(result);
+        // TODO make a call to billing service
+        //this._eventBillingService.processEvent(event.getBillingInfo());
+      }, (error) => {
+        reject(error);
+      });
+    });
   }
 
-  findEvent(query){
-    return this._eventPersistence.find(query);
+  findEvent(criteria, groupBy){
+    return this._eventPersistence.find(criteria, groupBy);
   }
 }
 

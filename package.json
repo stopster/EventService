@@ -15,7 +15,9 @@
     "sinon": "^2.2.0"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "mysql": "^2.13.0"
+    "mysql": "^2.13.0",
+    "sql-bricks": "^2.0.2"
   }
 }
