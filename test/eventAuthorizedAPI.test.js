@@ -6,7 +6,8 @@ const EventAuthorizedAPI = require('../app/components/eventAuthorizedAPI');
 
 describe('EventAuthorizedAPI', () => {
   const httpProvider = {
-    get: (route) => {}
+    get: (route) => {},
+    use: () => {},
   }
 
   const getSpy = sinon.spy(httpProvider, 'get');
