@@ -6,7 +6,7 @@ Event service
   npm install
 ```
 
-1. Running tests
+1. Run tests
 ```
   npm test
 ```
